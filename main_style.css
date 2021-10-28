@@ -59,8 +59,15 @@ html, body{
 }
 
 .main-header nav a{
-
     text-decoration: none;
+
+
+}
+
+.main-header nav a .about-header:hover{
+    background: -webkit-linear-gradient(#b6b4b4, #ffffff);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
 }
 
 .header-text{
