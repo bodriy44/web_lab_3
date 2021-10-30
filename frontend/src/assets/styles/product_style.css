@@ -67,11 +67,4 @@ html, body{
 
 }
 
-@media (max-width: 1133px) {
-    .product-item {
-        width: calc(50% - 40px);
-        padding: 25px 20px;
-        margin-bottom: 25px;
-    }
-}
 

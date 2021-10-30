@@ -26,3 +26,11 @@ html, body{
     flex-direction: row;
     flex-wrap: wrap;
 }
+
+@media (max-width: 1133px) {
+    .v-for {
+        width: calc(50% - 40px);
+        padding: 25px 20px;
+        margin-bottom: 25px;
+    }
+}
