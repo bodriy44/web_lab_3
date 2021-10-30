@@ -1,5 +1,9 @@
 <template>
+  <div class = "main_vue">
 
+
+
+  </div>
 </template>
 
 <script>

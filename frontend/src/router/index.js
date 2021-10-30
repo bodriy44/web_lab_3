@@ -1,14 +1,24 @@
 import Vue from 'vue'
 import VueRouter from 'vue-router'
 import Home from '../views/Home.vue'
+import Authorization from "@/components/Authorization";
+import Header from '@/components/Header'
 
+Vue.component('app-about', Authorization)
+Vue.component('app-authorization', Authorization)
+Vue.component('app-header', Header)
 Vue.use(VueRouter)
 
 const routes = [
   {
     path: '/',
     name: 'Home',
-    component: Home
+    components: {
+      default: Home
+    },
+    meta: {
+      requiredAuth: true
+    }
   },
   {
     path: '/about',
@@ -16,7 +26,17 @@ const routes = [
     // route level code-splitting
     // this generates a separate chunk (about.[hash].js) for this route
     // which is lazy-loaded when the route is visited.
-    component: () => import(/* webpackChunkName: "about" */ '../views/About.vue')
+    component: () => import(/* webpackChunkName: "about" */ '../views/About.vue'),
+    components: {
+      header: Header
+    }
+  },
+  {
+    path: '/authorization',
+    name: 'Authorization',
+    components: {
+      default: Authorization
+    }
   }
 ]
 
