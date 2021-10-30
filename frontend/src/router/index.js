@@ -5,12 +5,16 @@ import Authorization from "@/components/Authorization";
 import Header from '@/components/Header'
 import Content from '@/components/ContentPage'
 import Product from '@/components/Product'
+import MainPage from '@/components/MainPage'
+import About from '@/components/About'
 
 Vue.component('app-about', Authorization)
 Vue.component('app-authorization', Authorization)
 Vue.component('app-content', Content)
 Vue.component('app-product', Product)
 Vue.component('app-header', Header)
+Vue.component('app-mainpage', MainPage)
+Vue.component('app-about', About)
 Vue.use(VueRouter)
 
 const routes = [
@@ -27,12 +31,8 @@ const routes = [
   {
     path: '/about',
     name: 'About',
-    // route level code-splitting
-    // this generates a separate chunk (about.[hash].js) for this route
-    // which is lazy-loaded when the route is visited.
-    component: () => import(/* webpackChunkName: "about" */ '../views/About.vue'),
     components: {
-      header: Header
+      default: About
     }
   },
   {
@@ -43,7 +43,7 @@ const routes = [
     },
   },
   {
-    path: '/content',
+    path: '/content/:id',
     name: 'Content',
     components: {
       default: Content
@@ -54,6 +54,13 @@ const routes = [
     name: 'Product',
     components: {
       default: Product
+    }
+  },
+  {
+    path: '/mainpage',
+    name: 'MainPage',
+    components: {
+      default: MainPage
     }
   }
 

@@ -5,7 +5,7 @@
         </div>
         <h4>
             <div class = "title">
-              <router-link :to="{name: 'Content', params: {id: product.id}}">
+              <router-link :to="{name: 'Content', params: {product: product, id: product.id}}">
               {{ product.title }}
               </router-link>
             </div>

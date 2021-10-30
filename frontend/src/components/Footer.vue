@@ -18,51 +18,5 @@ export default {
 }
 </script>
 
-<style scoped>
-html, body{
-  height: 100%;
-  font-family: 'Roboto', sans-serif;
-  padding: 0;
-  margin: 0;
-}
-
-.footer {
-  position: relative;
-  bottom: 0;
-  left: 0;
-  width: 100%;
-  height: 60px;
-  background-color: #000000;
-}
-
-.footer-text {
-
-  color: white;
-  font-size: 15px;
-  padding-left: 40px;
-  margin-top:20px;
-  float: left;
-  word-spacing: 10px;
-}
-
-.footer-content-right {
-
-  padding-right:40px;
-  margin-top:10px;
-  float:right;
-}
-
-.icon-style {
-
-  height:30px;
-  margin-left:20px;
-  margin-top:5px;
-
-}
-
-.icon-style:hover {
-
-  height:40px;
-}
-
+<style scoped src="../assets/styles/footer_style.css">
 </style>

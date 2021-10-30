@@ -26,4 +26,23 @@ body.auth{
   color: #fff;
 }
 
+body.main{
+  margin:0;
+  padding:0;
+  font-family:sans-serif;
+  background: white;
+  color:black;
+}
+
+.footer[data-v-40ab164b]{
+  position: absolute;
+  bottom: 0;
+}
+
 </style>
+<script>
+import ContentPage from "./components/ContentPage";
+export default {
+  components: {ContentPage}
+}
+</script>

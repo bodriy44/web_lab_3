@@ -3,7 +3,7 @@
     <div class="login-box">
       <div class="row">
         <img
-            src="../assets/images/logo.png" alt="picture not found!"
+            src="../assets/images/logo.png" alt="Logo"
         />
       </div>
       <h2>Login</h2>
@@ -21,9 +21,9 @@
           </label>
         </div>
       </form>
-      <form action="main_page.html" >
+      <router-link :to="{name: 'MainPage'}">
         <button type="submit" class = "submit-button">Вход</button>
-      </form>
+      </router-link>
     </div>
   </section>
 </template>

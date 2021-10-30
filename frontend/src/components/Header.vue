@@ -13,7 +13,13 @@
         <input type="submit" name="" value="" class="submit" />
       </form>
 
-      <nav><a href="#"> <h2 class = "about-header">О нас</h2>  </a><a href="#"><h2 class = "about-header">Личный кабинет</h2>  </a><a href="#"><h2 class = "about-header">Корзина</h2>  </a></nav>
+      <nav>
+        <router-link :to="{name: 'About'}">
+          <h2 class = "about-header">О нас</h2>
+        </router-link>
+        <a href="#"><h2 class = "about-header">Личный кабинет</h2></a>
+        <a href="#"><h2 class = "about-header">Корзина</h2></a>
+      </nav>
 
     </header>
   </div>
@@ -25,170 +31,5 @@ export default {
 }
 </script>
 
-<style scoped>
-
-.main-header{
-  margin-top: 0;
-  margin-left: 0;
-  width: 100%;
-  height: 100px;
-  background-color: #000000;
-}
-
-.main-header nav a h2{
-
-  color: white;
-}
-
-.main-header nav a{
-  text-decoration: none;
-
-
-}
-
-.main-header nav a .about-header:hover{
-  background: -webkit-linear-gradient(#b6b4b4, #ffffff);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-}
-
-.header-text{
-  color: white;
-  font-size: 15px;
-  padding-left: 40px;
-  margin-top:20px;
-  float: left;
-  word-spacing: 10px;
-}
-
-header nav {
-
-  display: inline-block;
-  font-size: 15px;
-  padding-left: 40px;
-  margin-right: 30px;
-  margin-top:20px;
-  float: right;
-  color: white;
-}
-
-header nav a {
-
-  display: inline-block;
-  padding-left: 20px;
-}
-
-header img{
-  width: 100px;
-  height: 100px;
-}
-
-.search {
-  /* устанавливаем необходимую ширину формы в зависимости от дизайна
-  ** форма без проблем растягивается */
-  width: 20%;
-  display: inline-block;
-  margin-top: 30px;
-  margin-left: 10%;
-  /* кнопку отправки будем позиционировать абсолютно,
-  ** поэтому необходимо это свойство */
-  position: absolute;
-}
-
-.search input {
-  /* отключаем бордюры у инпутов */
-  border: none;
-}
-
-/* стили для поля ввода */
-.search .input {
-  /* растягиваем поле ввода на всю ширину формы */
-  width: 100%;
-
-  /* за счет верхнего (8px) и нижнего (9px) внутренних отступов
-  ** регулируем высоту формы
-  ** внутренний отступ справа (37px) делаем больше левого,
-  ** т.к. там будет размещена кнопка отправки	*/
-  padding: 8px 37px 9px 15px;
-
-  /* чтобы ширина поля ввода (100%) включала в себя внутренние отступы */
-  -moz-box-sizing: border-box;
-  box-sizing: border-box;
-
-  /* добавляем внутренние тени */
-  box-shadow: inset 0 0 5px rgba(0,0,0,0.1), inset 0 1px 2px rgba(0,0,0,0.3);
-
-  /* закругляем углы */
-  border-radius: 20px;
-
-  background: #EEE;
-  font: 13px Tahoma, Arial, sans-serif;
-  color: #555;
-  outline: none;
-}
-
-/* меняем оформление поля ввода при фокусе */
-.search .input:focus {
-  box-shadow: inset 0 0 5px rgba(0,0,0,0.2), inset 0 1px 2px rgba(0,0,0,0.4);
-  background: #E8E8E8;
-  color: #333;
-}
-
-/* оформляем кнопку отправки */
-.search .submit {
-  /* позиционируем кнопку абсолютно от правого края формы */
-  position: absolute;
-  top: 0;
-  right: 0;
-
-  width: 37px;
-
-  /* растягиваем кнопку на всю высоту формы */
-  height: 100%;
-
-  cursor: pointer;
-  background: url(https://lh4.googleusercontent.com/-b-5aBxcxarY/UAfFW9lVyjI/AAAAAAAABUg/gQtEXuPuIds/s13/go.png) 50% no-repeat;
-
-  /* добавляем прозрачность кнопке отправки */
-  opacity: 0.5;
-}
-
-/* при наведении курсора меняем прозрачность кнопки отправки */
-.search .submit:hover {
-  opacity: 0.8;
-}
-
-/* данное свойство необходимо для того, чтобы в браузерах
-** Chrome и Safari можно было стилизовать инпуты */
-input[type="search"] {
-  -webkit-appearance: none;
-}
-
-@media (max-width: 1133px) {
-  .main-header {
-    height: 25em;
-  }
-
-  .search {
-    position: relative;
-    float: bottom;
-    display: block;
-    text-align: left;
-    width: 50%;
-    margin-left: 20px;
-
-  }
-
-  .main-header nav a {
-
-    float: bottom;
-
-    display: block;
-  }
-
-  .main-header nav {
-    position: relative;
-    float: left;
-  }
-}
+<style  src="../assets/styles/header_style.css">
 </style>

@@ -34,3 +34,37 @@ html, body{
         margin-bottom: 25px;
     }
 }
+
+
+@media (max-width: 1133px) {
+    .main-header{
+        height: 25em;
+    }
+    .search{
+        position: relative;
+        float: bottom;
+        display: block;
+        text-align: left;
+        width: 50%;
+        margin-left:20px;
+
+    }
+
+    .main-header nav a{
+
+        float: bottom;
+
+        display: block;
+    }
+
+    .main-header nav{
+        position: relative;
+        float: left;
+    }
+
+    .products .product-item {
+        width: calc(50% - 40px);
+        padding: 25px 20px;
+        margin-bottom: 25px;
+    }
+}

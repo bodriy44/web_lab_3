@@ -1,8 +1,6 @@
 <template>
   <div class="home">
-    <Header></Header>
-    <MainPage></MainPage>
-    <Footer></Footer>
+    <Authorization></Authorization>
   </div>
 </template>
 
@@ -12,10 +10,12 @@
 import Header from '@/components/Header.vue'
 import Footer from "../components/Footer";
 import MainPage from "../components/MainPage";
+import Authorization from "../components/Authorization";
 
 export default {
   name: 'Home',
   components: {
+    Authorization,
     MainPage,
     Footer,
     Header
