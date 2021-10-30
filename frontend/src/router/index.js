@@ -3,9 +3,11 @@ import VueRouter from 'vue-router'
 import Home from '../views/Home.vue'
 import Authorization from "@/components/Authorization";
 import Header from '@/components/Header'
+import Content from '@/components/ContentPage'
 
 Vue.component('app-about', Authorization)
 Vue.component('app-authorization', Authorization)
+Vue.component('app-content', Content)
 Vue.component('app-header', Header)
 Vue.use(VueRouter)
 
@@ -36,8 +38,16 @@ const routes = [
     name: 'Authorization',
     components: {
       default: Authorization
+    },
+  },
+  {
+    path: '/content',
+    name: 'Content',
+    components: {
+      default: Content
     }
   }
+
 ]
 
 const router = new VueRouter({

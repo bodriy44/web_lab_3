@@ -1,9 +1,7 @@
 <template>
   <div class="home">
     <Header></Header>
-    <div class = "test">
-      Продукты
-    </div>
+    <MainPage></MainPage>
     <Footer></Footer>
   </div>
 </template>
@@ -11,13 +9,14 @@
 <script>
 
 // @ is an alias to /src
-import HelloWorld from '@/components/HelloWorld.vue'
 import Header from '@/components/Header.vue'
 import Footer from "../components/Footer";
+import MainPage from "../components/MainPage";
 
 export default {
   name: 'Home',
   components: {
+    MainPage,
     Footer,
     Header
   }
