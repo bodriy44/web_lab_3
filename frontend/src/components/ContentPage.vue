@@ -51,12 +51,19 @@
 <script>
 import Footer from "./Footer";
 import Header from "./Header";
+import Product from "./Product";
 
 export default {
   name: "ContentPage",
+  props: {
+    product: Product,
+    id: Number,
+    title: String
+  },
   components: {
     Footer,
-    Header
+    Header,
+    Product
   },
   data() {
     return {

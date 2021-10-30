@@ -34,10 +34,6 @@ body.main{
   color:black;
 }
 
-.footer[data-v-40ab164b]{
-  position: absolute;
-  bottom: 0;
-}
 
 </style>
 <script>
