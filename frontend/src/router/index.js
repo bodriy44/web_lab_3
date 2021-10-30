@@ -4,10 +4,12 @@ import Home from '../views/Home.vue'
 import Authorization from "@/components/Authorization";
 import Header from '@/components/Header'
 import Content from '@/components/ContentPage'
+import Product from '@/components/Product'
 
 Vue.component('app-about', Authorization)
 Vue.component('app-authorization', Authorization)
 Vue.component('app-content', Content)
+Vue.component('app-product', Product)
 Vue.component('app-header', Header)
 Vue.use(VueRouter)
 
@@ -45,6 +47,13 @@ const routes = [
     name: 'Content',
     components: {
       default: Content
+    }
+  },
+  {
+    path: '/product',
+    name: 'Product',
+    components: {
+      default: Product
     }
   }
 
