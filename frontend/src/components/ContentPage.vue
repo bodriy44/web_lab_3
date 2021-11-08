@@ -1,6 +1,5 @@
 <template>
 <section class="content">
-
 <Header></Header>
   <main class ="container">
     <div class="product-title">
@@ -44,7 +43,6 @@
 
   </main>
   <Footer></Footer>
-
 </section>
 </template>
 
@@ -55,11 +53,6 @@ import Product from "./Product";
 
 export default {
   name: "ContentPage",
-  props: {
-    product: Product,
-    id: Number,
-    title: String
-  },
   components: {
     Footer,
     Header,
@@ -67,8 +60,8 @@ export default {
   },
   data() {
     return {
-      product: null,
-      id: null
+      id: null,
+      product: null
     }
   },
   created() {
