@@ -1,0 +1,50 @@
+version: '3'
+services:
+
+  app:
+    build:
+      context: ../../WEB/web lab 1
+      dockerfile: ../../WEB/web lab 1/docker/Dockerfile
+    image: digitalocean.com/php
+    restart: unless-stopped
+    tty: true
+    environment:
+      SERVICE_NAME: app
+      SERVICE_TAGS: dev
+    working_dir: /var/www
+    volumes:
+      - ./:/var/www
+      - ./php/local.ini:/usr/local/etc/php/conf.d/local.ini
+    networks:
+      - app-network
+
+  webserver:
+    image: nginx:alpine
+    restart: unless-stopped
+    tty: true
+    ports:
+      - "80:80"
+      - "443:443"
+    volumes:
+      - ./:/var/www
+      - ./nginx/conf.d/:/etc/nginx/conf.d/
+    networks:
+      - app-network
+
+  db:
+    image: mysql:5.7
+    restart: unless-stopped
+    tty: true
+    ports:
+      - "3306:3306"
+    environment:
+      MYSQL_ROOT_PASSWORD: 'eldar1234'
+      MYSQL_DATABASE: 'web'
+      MYSQL_USER: 'eldar'
+      MYSQL_PASSWORD: 'eldar1234'
+    networks:
+      - app-network
+
+networks:
+  app-network:
+    driver: bridge
