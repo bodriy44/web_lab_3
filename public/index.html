@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Title</title>
+</head>
+<body>
+<h1>Авторизация</h1>
+<form action="index.php" method="post">
+  <section>
+    <label>
+      <input name="login"> Логин
+    </label>
+  </section>
+  <section>
+    <label>
+      <input name="password" type="password"> Пароль
+    </label>
+  </section>
+  <section>
+    <button type="submit">Войти</button>
+  </section>
+</form>
+
+<br><br>
+
+<h1>Отправка картинки</h1>
+<form action="index.php" method="post" enctype="multipart/form-data">
+  <section>
+    <input name="file" type="file"> Картинка
+  </section>
+  <section>
+    <button type="submit">Отправить картинку</button>
+  </section>
+</form>
+</body>
+</html>
