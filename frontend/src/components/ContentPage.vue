@@ -1,7 +1,7 @@
 <template>
 <section class="content">
 <Header></Header>
-  <main class ="container">
+  <main class ="container" v-if = "product">
     <div class="product-title">
       <h1>{{ product.title }}</h1>
     </div>
@@ -60,13 +60,13 @@ export default {
   },
   data() {
     return {
-      id: null,
       product: null
     }
   },
   created() {
-    this.id = this.$route.params.id
-    this.product = this.$route.params.product
+    const id = this.$route.params.id
+    this.$http.get('/products/' + id)
+      .then(response => this.product = response.data)
   }
 }
 </script>
