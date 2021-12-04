@@ -22,3 +22,7 @@ Route::prefix('products')->group(function(){
     Route::get('/', [\App\Http\Controllers\ProductController::class, 'list']);
     Route::get('/{id}', [\App\Http\Controllers\ProductController::class, 'info']);
 });
+
+Route::prefix('cart')->group(function(){
+    Route::post('/', [\App\Http\Controllers\CartController::class, 'addToCart']);
+});

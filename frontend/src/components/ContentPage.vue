@@ -24,7 +24,7 @@
               <span class="buying-pricenew-val-currency">р.</span>
             </div>
           </div>
-          <a href="#" class="btn"><span class="text">Добавить <span>в корзину</span></span></a>
+          <button  class="btn" @click = "addToCart(product)"><span class="text">Добавить <span>в корзину</span></span></button>
 
         </div>
       </div>
@@ -58,6 +58,16 @@ export default {
     Header,
     Product
   },
+    methods: {
+      addToCart(product){
+          //тут добавление в бд корзины пользователя сделать
+          const params = {
+              id: product.id, count: 1
+          }
+          this.$http.post('/cart', params)
+          //.then(response => product.inCart = response.data.inCart)
+      }
+    },
   data() {
     return {
       product: null
