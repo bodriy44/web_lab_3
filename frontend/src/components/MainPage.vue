@@ -21,6 +21,7 @@
 import Product from "./Product";
 import Header from "./Header";
 import Footer from "./Footer";
+import {forEach} from "core-js/internals/array-iteration";
 
 export default {
   name: "MainPage",
@@ -34,12 +35,23 @@ export default {
   },
   data(){
     return{
-      products: []
+      products: [],
+      searched: ""
     }
   },
-    created(){
+    created() {
         this.$http.get('/products')
-        .then(response => this.products = response.data)
+            .then(response => this.searchFilter(response.data))
+    },
+    methods: {
+      searchFilter(data){
+              console.log(data.length)
+              data.forEach((element) => {
+                  if (element.title.includes(this.searched)) {
+                      this.products.push(element)
+                  }
+              })
+      }
     }
 }
 </script>
