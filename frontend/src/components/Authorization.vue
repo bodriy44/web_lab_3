@@ -6,7 +6,7 @@
             src="../assets/images/logo.png" alt="Logo"
         />
       </div>
-      <h2>Login</h2>
+      <h2>{{this.info}}</h2>
       <form>
         <div class="user-box">
           <input type="text"  v-model="username"  name="" required="" class="username"/>
@@ -21,9 +21,7 @@
           </label>
         </div>
       </form>
-      <router-link :to="{name: 'MainPage'}">
-        <button type="submit" class = "submit-button" @click = "authorization()">Вход</button>
-      </router-link>
+        <button type="submit" class = "submit-button" @click = "authorization()" >Вход</button>
     </div>
   </section>
 </template>
@@ -40,7 +38,9 @@ export default {
         return {
             userId: null,
             username: null,
-            password: null
+            password: null,
+            info: 'Введите данные',
+            correct: false
         }
     },
     methods: {
@@ -51,17 +51,21 @@ export default {
             }
             this.$http.post('/user', params)
             .then(response => this.checkCorrect(response.data.userId))
+
         },
         checkCorrect(data){
-            if(data === -1)
+            if(data !== -1)
             {
-                return false
+                this.userId = data
+                this.correct = true
+                this.$router.push('MainPage')
+                this.info = "Успешный вход"
             }
             else
             {
-                this.userId = data
-                return true
+                this.info = "Неверные данные, повторите попытку"
             }
+            console.log(this.correct)
         }
     },
 }
