@@ -26,3 +26,7 @@ Route::prefix('products')->group(function(){
 Route::prefix('cart')->group(function(){
     Route::post('/', [\App\Http\Controllers\CartController::class, 'addToCart']);
 });
+
+Route::prefix('user')->group(function(){
+    Route::post('/', [\App\Http\Controllers\UserController::class, 'authorization']);
+});
