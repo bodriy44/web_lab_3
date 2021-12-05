@@ -8,7 +8,7 @@
 
     <div class = "info">
       <div class="product-image">
-        <img :src=product.image  class="book-img-cover" alt="">
+        <img :src="require(`../assets/images/books/${product.id}.jpg`)"  class="book-img-cover" alt="">
       </div>
 
       <div class ="product-description">

@@ -1,11 +1,11 @@
 <template>
       <section class="product-item">
         <div>
-          <img :src=product.image alt="image">
+          <img :src="require(`../assets/images/books/${product.id}.jpg`)" alt="image">
         </div>
         <h4>
             <div class = "title">
-                <router-link :to="{name: 'Content', params: {product: product, id: product.id}}">
+                <router-link :to="{name: 'Content', params: {id: product.id}}">
                 {{ product.title }}
                 </router-link>
             </div>
