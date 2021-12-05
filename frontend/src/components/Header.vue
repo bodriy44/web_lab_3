@@ -8,9 +8,9 @@
 
       <img src = "../assets/images/logo.png" alt ="Упс" />
 
-      <form action="" method="post" class="search">
-        <input type="search" name="" placeholder="поиск" class="input" />
-        <input type="submit" name="" value="" class="submit" />
+      <form class="search" onsubmit="return false;">
+        <input v-model="searchInfo" type="search" name="" placeholder="поиск" class="input" />
+        <input type="submit" name="" value="" class="submit" @click = "search()" />
       </form>
 
       <nav>
@@ -27,7 +27,17 @@
 
 <script>
 export default {
-  name: "Header"
+  name: "Header",
+  data() {
+      return{
+          searchInfo: null
+      }
+  },
+  methods: {
+      search(){
+          console.log(this.searchInfo)
+      }
+  }
 }
 </script>
 
