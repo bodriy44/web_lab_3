@@ -1,6 +1,6 @@
 <template>
   <section>
-  <Header></Header>
+  <Header v-on:searchChanged = "updateSearch"></Header>
     <main class="container">
     <div>
       <h1>
@@ -36,7 +36,8 @@ export default {
   data(){
     return{
       products: [],
-      searched: ""
+      searched: "",
+      allProducts: []
     }
   },
     created() {
@@ -45,12 +46,18 @@ export default {
     },
     methods: {
       searchFilter(data){
-              console.log(data.length)
+              this.allProducts = data
+              this.products = []
               data.forEach((element) => {
                   if (element.title.includes(this.searched)) {
                       this.products.push(element)
                   }
               })
+      },
+
+      updateSearch(e){
+          this.searched = e
+          this.searchFilter(this.allProducts)
       }
     }
 }

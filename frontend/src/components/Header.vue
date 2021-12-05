@@ -26,6 +26,7 @@
 </template>
 
 <script>
+
 export default {
   name: "Header",
   data() {
@@ -35,6 +36,7 @@ export default {
   },
   methods: {
       search(){
+          this.$emit("searchChanged", this.searchInfo)
           console.log(this.searchInfo)
       }
   }
